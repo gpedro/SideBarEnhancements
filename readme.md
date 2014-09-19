@@ -1,6 +1,6 @@
 
 
-import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exists(path) else None); window.run_command('exec', {'cmd': ['git', 'clone', 'https://github.com/titoBouzout/SideBarEnhancements', 'SideBarEnhancements'], 'working_dir': path})
+import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exists(path) else None); window.run_command('exec', {'cmd': ['git', 'clone', 'https://github.com/davidsonfellipe/SideBarEnhancements', 'SideBarEnhancements'], 'working_dir': path})
 
 import os; path=sublime.packages_path(); window.run_command('exec', {'cmd': ['git', 'checkout', '37429739a0452a2dc36343fb7875ba7fcbeb88a9'], 'working_dir': os.path.join(path, 'SideBarEnhancements')})
 
