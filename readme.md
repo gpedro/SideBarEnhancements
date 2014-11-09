@@ -1,8 +1,10 @@
 # How to install Sidebar Enhancements
+
+```python
 import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exists(path) else None); window.run_command('exec', {'cmd': ['git', 'clone', 'https://github.com/davidsonfellipe/SideBarEnhancements', 'SideBarEnhancements'], 'working_dir': path})
 
 import os; path=sublime.packages_path(); window.run_command('exec', {'cmd': ['git', 'checkout', '37429739a0452a2dc36343fb7875ba7fcbeb88a9'], 'working_dir': os.path.join(path, 'SideBarEnhancements')})
-
+```
 
 [Sublime Text 3+][]\*\* Package. Install via an updated version of [Package Control 2][]. Just DON'T install manually.\*\*
 
@@ -26,8 +28,6 @@ The not so basic: copy paths as URIs, URLs, content as UTF8, content as <data:ur
 Preference to control if a buffer should be closed when affected by a deletion operation.
 
 Allows to display "file modified date" and "file size" on statusbar.
-
-![][]
 
 ## Installation
 
@@ -115,22 +115,22 @@ Then we create configuration file:
 `Project/.sublime/SideBarEnhancements.json`
 
 with content:
-
-    {
-        "public/":{
-            "url_testing":"http://localhost/",
-            "url_production":"http://domain.tld/"
-        },
-        "experimental/":{
-            "url_testing":"http://experimental/",
-            "url_production":"http://domain.tld/"
-        },
-        "":{
-            "url_testing":"http://the_url_for_the_project_root/",
-            "url_production":"http://the_url_for_the_project_root/"
-        }
+```json
+{
+    "public/":{
+        "url_testing":"http://localhost/",
+        "url_production":"http://domain.tld/"
+    },
+    "experimental/":{
+        "url_testing":"http://experimental/",
+        "url_production":"http://domain.tld/"
+    },
+    "":{
+        "url_testing":"http://the_url_for_the_project_root/",
+        "url_production":"http://the_url_for_the_project_root/"
     }
-
+}
+```
 ...
 
 You can create config files `some/folder/.sublime/SideBarEnhancements.json` anywhere.
@@ -141,11 +141,13 @@ On Sublime Text 3 `F12` key is bound to `"goto_definition"` command by default. 
 
 Go to `Preferences -> Package Settings -> Side Bar -> Key Bindings - User` and add the following:
 
-    [
-        { "keys": ["f12"],
-            "command": "goto_definition"
-        },
-    ]
+```json
+[
+    { "keys": ["f12"],
+        "command": "goto_definition"
+    },
+]
+```
 
 ## Notes on configuring the `Open With` menu:
 
@@ -155,20 +157,20 @@ Definitions file: `User/SideBarEnhancements/Open With/Side Bar.sublime-menu` (no
 
 -   On OSX, invoking *shell* commands is NOT supported.
 
-<!-- -->
-
-    //application 1
-    {
-        "caption": "Photoshop",
-        "id": "side-bar-files-open-with-photoshop",
-        "command": "side_bar_files_open_with",
-        "args": {
-            "paths": [],
-            "application": "Adobe Photoshop CS5.app", // OSX
-            "extensions":"psd|png|jpg|jpeg"  //any file with these extensions
-        }
-        "open_automatically" : true // will close the view/tab and launch the application
-    },
+```json
+//application 1
+{
+    "caption": "Photoshop",
+    "id": "side-bar-files-open-with-photoshop",
+    "command": "side_bar_files_open_with",
+    "args": {
+        "paths": [],
+        "application": "Adobe Photoshop CS5.app", // OSX
+        "extensions":"psd|png|jpg|jpeg"  //any file with these extensions
+    }
+    "open_automatically" : true // will close the view/tab and launch the application
+},
+```
 
 ## FAQ
 
